@@ -14,7 +14,8 @@ const connectToDb = () => {
     
     try {
         mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`, {
-            useNewUrlParser: true
+            useNewUrlParser: true,
+            useFindAndModify: false
         });
         console.log('Connected to mongo!!!');
     }

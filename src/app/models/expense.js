@@ -24,7 +24,7 @@ let expenseSchema = new Schema({
   approved: {
     type: String,
     default: 'Pending',
-    enum: ['Pending', 'Declined', 'Aprroved',]
+    enum: ['Pending', 'Declined', 'Approved',]
   },
   created_at: { 
     type: Date, 
