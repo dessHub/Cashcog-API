@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "DEBUG=log nodemon --exec babel-node server.js"
+    "start": "DEBUG=log nodemon --exec babel-node src/server.js"
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
@@ -23,6 +23,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "helmet": "^3.18.0",
+    "mongoose": "^5.8.9",
     "morgan": "^1.9.1"
   },
   "repository": "https://github.com/dessHub/Cashcog-API.git",
