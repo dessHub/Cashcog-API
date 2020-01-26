@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "DEBUG=log nodemon --exec babel-node src/server.js"
+    "start": "DEBUG=log nodemon --exec babel-node src/server.js",
+    "production": "babel-node src/server.js"
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
