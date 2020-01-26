@@ -30,7 +30,8 @@
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
     "node-cron": "^2.0.3",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.0.0"
   },
   "jest": {
     "collectCoverage": true,
