@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
- import dotenv from 'dotenv';
- const { MongoMemoryServer } = require('mongodb-memory-server');
- 
- const mongod = new MongoMemoryServer();
- 
- dotenv.config();
+import dotenv from 'dotenv';
+import MongoMemoryServer from 'mongodb-memory-server';
+
+const mongod = new MongoMemoryServer();
+
+dotenv.config();
 
 const connectToDb = async () => {
 

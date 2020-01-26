@@ -76,7 +76,6 @@ FNH:3
 FNDA:1,(anonymous_0)
 FNDA:1,(anonymous_1)
 FNDA:4,(anonymous_2)
-DA:3,1
 DA:5,1
 DA:7,1
 DA:9,1
@@ -98,8 +97,8 @@ DA:49,4
 DA:51,4
 DA:52,4
 DA:53,4
-LF:22
-LH:20
+LF:21
+LH:19
 BRDA:21,0,0,1
 BRDA:21,0,1,0
 BRF:2

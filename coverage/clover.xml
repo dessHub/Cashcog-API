@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1580065130889" clover="3.2.0">
-  <project timestamp="1580065130889" name="All files">
-    <metrics statements="71" coveredstatements="55" conditionals="2" coveredconditionals="1" methods="20" coveredmethods="10" elements="93" coveredelements="66" complexity="0" loc="71" ncloc="71" packages="6" files="6" classes="6"/>
+<coverage generated="1580066017985" clover="3.2.0">
+  <project timestamp="1580066017985" name="All files">
+    <metrics statements="70" coveredstatements="54" conditionals="2" coveredconditionals="1" methods="20" coveredmethods="10" elements="92" coveredelements="65" complexity="0" loc="70" ncloc="70" packages="6" files="6" classes="6"/>
     <package name="app">
       <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="index.js" path="/Users/korirdesmond/Documents/projects/node/Cashcog-API/src/app/index.js">
@@ -43,10 +43,9 @@
       </file>
     </package>
     <package name="app.db">
-      <metrics statements="22" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <metrics statements="21" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="connect.js" path="/Users/korirdesmond/Documents/projects/node/Cashcog-API/src/app/db/connect.js">
-        <metrics statements="22" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
-        <line num="3" count="1" type="stmt"/>
+        <metrics statements="21" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
