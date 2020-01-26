@@ -4,11 +4,14 @@
   "main": "server.js",
   "scripts": {
     "start": "DEBUG=log nodemon --exec babel-node src/server.js",
-    "production": "babel-node src/server.js"
+    "production": "babel-node src/server.js",
+    "test": "NODE_ENV=test jest --coverage --no-cache  --detectOpenHandles --runInBand --forceExit",
+    "test:coveralls": "nyc --reporter=text-lcov npm test | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
     "jest": "^24.8.0",
+    "mongodb-memory-server": "^6.2.3",
     "superagent": "^5.0.5",
     "supertest": "^4.0.2"
   },
@@ -27,7 +30,22 @@
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
     "node-cron": "^2.0.3",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "app/**/*.{js}",
+      "!server.js",
+      "!node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/config",
+      "<rootDir>/migrations",
+      "<rootDir>/seeders",
+      "<rootDir>/app/models/index.js"
+    ]
   },
   "repository": "https://github.com/dessHub/Cashcog-API.git",
   "author": "desshub <desshub95@gmail.com>",
