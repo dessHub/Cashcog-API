@@ -4,11 +4,14 @@
   "main": "server.js",
   "scripts": {
     "start": "DEBUG=log nodemon --exec babel-node src/server.js",
-    "production": "babel-node src/server.js"
+    "production": "babel-node src/server.js",
+    "test": "NODE_ENV=test jest --coverage --no-cache  --detectOpenHandles --runInBand --forceExit",
+    "test:coveralls": "nyc --reporter=text-lcov npm test | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.2.3",
     "superagent": "^5.0.5",
     "supertest": "^4.0.2"
   },

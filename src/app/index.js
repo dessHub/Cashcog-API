@@ -4,7 +4,7 @@ import logger from 'morgan';
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import cron from 'node-cron';
-import connectToDb from './db';
+import connectToDb from './db/connect';
 import router from './routes';
 import { listenToNewExpense } from './utils';
 
