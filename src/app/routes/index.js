@@ -1,11 +1,14 @@
 import express from 'express';
 
-import controllers from '../controllers';
+import controllers, { getExpense, validateInputBody } from '../controllers';
 
 const router = express.Router();
 
-router.get('/expenses', controllers.getAllExpenses);
-router.patch('/expense/:uuid', controllers.updateExpense);
-router.delete('/expense/:uuid', controllers.deleteExpense);
+const { getAllExpenses, getOneExpense, updateExpense, deleteExpense } = controllers;
+
+router.get('/expenses', getAllExpenses);
+router.get('/expense/:uuid', getExpense, getOneExpense);
+router.patch('/expense/:uuid', getExpense, validateInputBody, updateExpense);
+router.delete('/expense/:uuid', getExpense, deleteExpense);
 
 module.exports = router;

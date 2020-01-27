@@ -4,7 +4,7 @@ import logger from 'morgan';
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import cron from 'node-cron';
-import connectToDb from './db/connect';
+import connectToDb, { clearDatabase } from './db/connect';
 import router from './routes';
 import { listenToNewExpense } from './utils';
 
@@ -14,7 +14,7 @@ const app = express();
 connectToDb();
 
 // Fetch and creates new expense every 5 mins
-cron.schedule('*/5 * * * *', () => {
+cron.schedule('* */12 * * *', () => {
   listenToNewExpense();
 })
 

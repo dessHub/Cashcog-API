@@ -23,6 +23,7 @@ const connectToDb = async () => {
              * Connect to the in-memory database.
              */
             await mongoose.connect(testUri, mongooseOpts);
+            console.log("connect to test drive")
         } else {
             await mongoose.connect(dbURL, mongooseOpts);
         }
