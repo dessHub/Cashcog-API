@@ -24,25 +24,43 @@ describe('Test the root path', () => {
 
     /**
      * Clear all test data after every test.
-     */
-    afterEach(async () => await clearDatabase());
-
-    /**
+     *
      * Remove and close the db and server.
      */
-    afterAll(async () => await closeDatabase());
+    afterAll(async () => {
+        await clearDatabase()
+        await closeDatabase();
+    });
 
     test('It should response the GET method', async() => {
       const response = await request(app).get('/api/expenses');
       expect(response.statusCode).toBe(200);
     });
 
+    test('It should get one expense by UUID', async() => {
+        const response = await request(app).get('/api/expense/92b19fc6-5386-4985-bf5c-dc56c903dd23');
+        expect(response.statusCode).toBe(200);
+        expect(JSON.parse(response.text).Expense.uuid).toEqual('92b19fc6-5386-4985-bf5c-dc56c903dd23')
+      });
+  
     test('It should update an expense', async() => {
         const payload = { approved: 'Approved' }
         const response = await request(app).patch('/api/expense/92b19fc6-5386-4985-bf5c-dc56c903dd23')
             .set('Content-Type', 'application/json')
             .send(payload)
-        expect(JSON.parse(response.text).message).toEqual('Record updated successfully')
+        expect(JSON.parse(response.text).message).toEqual('Expense updated successfully')
+    });
+
+    test('It should check if expense exist before update', async() => {
+        const response = await request(app).patch('/api/expense/090990')
+            .set('Content-Type', 'application/json')
+        expect(JSON.parse(response.text).message).toEqual("Cant find expense")
+    });
+
+    test('It should not update an expense with withoud approved field', async() => {
+        const response = await request(app).patch('/api/expense/92b19fc6-5386-4985-bf5c-dc56c903dd23')
+            .set('Content-Type', 'application/json')
+        expect(JSON.parse(response.text).message).toEqual("Approved form field is required")
     });
 
     test('It should not update an expense with wrong approved value', async() => {
@@ -50,11 +68,11 @@ describe('Test the root path', () => {
         const response = await request(app).patch('/api/expense/92b19fc6-5386-4985-bf5c-dc56c903dd23')
             .set('Content-Type', 'application/json')
             .send(payload)
-        expect(JSON.parse(response.text).message).toEqual('Validation failed: approved: `Random` is not a valid enum value for path `approved`.')
+        expect(JSON.parse(response.text).message).toEqual("'Declined' and 'Approved' are valid values")
     });
 
     test('It should delete an expense', async() => {
         const response = await request(app).delete('/api/expense/92b19fc6-5386-4985-bf5c-dc56c903dd23');
-        expect(JSON.parse(response.text).message).toEqual('Record removed successfully')
+        expect(JSON.parse(response.text).message).toEqual('Expense removed successfully')
     });
 });

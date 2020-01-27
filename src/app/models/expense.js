@@ -47,6 +47,6 @@ let expenseSchema = new Schema({
 
 });
 
-var Expense = mongoose.model('User', expenseSchema);
+var Expense = mongoose.model('Expense', expenseSchema);
 
 module.exports = Expense;
