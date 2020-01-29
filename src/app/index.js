@@ -19,7 +19,7 @@ cron.schedule('* */12 * * *', () => {
   listenToNewExpense();
 })
 
-app.use(cors)
+app.use(cors())
 app.use(helmet())
 app.use(logger('dev'));
 app.use(bodyParser.json());
