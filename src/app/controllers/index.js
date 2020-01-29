@@ -25,12 +25,12 @@ controller.updateExpense = async (req, res) => {
     try {
         await res.expense.save();
         return res.status(200).send({
-            "message": "Expense updated successfully"
+            "message": "Expense updated successfully",
+            "Expense": res.expense
         })
     } catch (error){
         return res.status(400).send({
-            "message": error.message,
-            "Expense": res.expense
+            "message": error.message
         })
     } 
  }
