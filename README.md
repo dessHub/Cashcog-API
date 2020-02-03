@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/dessHub/Cashcog-API.svg?branch=master)](https://travis-ci.org/dessHub/Cashcog-API)
 
 # Cashcog-Approval-API
-Cashcog Approval API is a extension feature which provide approval process for Cashcog expense management software.
+Cashcog Approval API is a extension feature which provide approval process for Cashcog expense management software. View live version [Cashcog frontend](https://cashcog-front.netlify.com/)
 
 
 **Technologies
@@ -29,6 +29,37 @@ Cashcog Approval API is a extension feature which provide approval process for C
 * Run the tests
 
      `npm run test`
+     
+**Run with Docker**
+
+You should have docker install in your machine. If you have docker set up go
+ahead and spin the server by:
+
+* Build the image
+
+    ```sh
+    docker build -t cashcog-api-docker .
+    ```
+
+* Run docker image
+
+    ```sh
+    docker run -it -p 5000:5000 cashcog-api-docker
+    ```
+
+    NOTE: `5000` is the port at which the app is running.
+
+* To docker in the background
+
+    ```sh
+    docker run -d -p 5000:5000 cashcog-api-docker
+    ```
+
+* Access the API on port `5000`
+
+     ```sh
+     http://localhost:5000/
+     ```
 
 **API features**
 * fetching and creating expenses
